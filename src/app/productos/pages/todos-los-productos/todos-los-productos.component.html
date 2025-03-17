@@ -1,0 +1,39 @@
+<div class="d-flex justify-content-center">
+    <div class="w-75">
+        <a class="btn btn-primary" [routerLink]="['/Crear']">Crear</a>
+        <lista-productos 
+        (eliminar)="Eliminar($event)" 
+        [productos]="productos">
+        </lista-productos>
+        <Loading class="position-absolute top-50 start-50 translate-middle" [cargarndo]="cargando"></Loading>
+    </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+        </div>
+        <div class="modal-body">
+          <p>Desea eliminar el producto</p>
+        </div>
+        <div class="modal-footer">
+          <button 
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+          (click)="EliminarProducto(idProducto)"
+          >
+            Elimina
+          </button>
+          <button 
+          type="button" 
+          class="btn btn-secondary"  
+          data-bs-dismiss="modal">
+          Cancela</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

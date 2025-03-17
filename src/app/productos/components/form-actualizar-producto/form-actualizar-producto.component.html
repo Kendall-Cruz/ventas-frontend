@@ -1,0 +1,76 @@
+<form [formGroup]="formProducto" (ngSubmit)="Actualizar()" >
+    <div>
+        <h2>Actualizar Producto</h2>
+    </div>
+    <div>
+        <label for="id">Código</label>
+        <input 
+            type="text" 
+            class="form-control"
+            formControlName="id"
+            readonly>
+    </div>
+    <div>
+        <label for="nombre">Nombre<span class="requerido">*</span></label>
+        <input 
+            type="text" 
+            class="form-control" 
+            formControlName="nombre">
+    </div>
+    <div>
+        <label for="precio">Precio<span class="requerido">*</span></label>
+        <input 
+            type="number" 
+            class="form-control"
+            formControlName="precio">
+        <div class="alert alert-danger" [hidden]="formProducto.get('precio')?.valid">
+            El precio tiene que ser mayor a 1
+        </div>
+    </div>
+    <div>
+        <input 
+        [(ngModel)]="idProveedor"
+        type="hidden" 
+        class="form-control" 
+        formControlName="proveedor">
+        <label for="precio" class="d-block">Proveedor<span class="requerido ">*</span></label>
+        
+        <div class="btn-group">
+            <input 
+            [value]="nombreProveedor"
+            type="text" 
+            class="form-control" readonly>
+            <button 
+            class="btn btn-primary" 
+            type="button"  
+            data-bs-toggle="modal" 
+            data-bs-target="#exampleModal">
+                Buscar
+            </button>
+        </div>
+    </div>
+    <div>
+        <label for="foto">Foto<span class="requerido">*</span></label>
+        <input 
+        type="file"
+        (change)="ObtenerArchivo($event)"
+        class="form-control" >
+    </div>
+    <div class="mt-3">
+
+        <button 
+        [disabled]="formProducto.invalid"
+        class="btn btn-primary" 
+        type="submit"  >
+            Actualizar
+        </button>
+
+        <button 
+        (click)="Borrar()"
+        class="btn btn-primary ms-5" 
+        type="button">
+            Borrar
+        </button>
+    </div>
+
+</form>

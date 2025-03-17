@@ -1,0 +1,30 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Código</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Correo</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of proveedores; track $index) {
+        <tr>
+          <td>{{item.id}}</td>
+          <td>{{item.nombreCompleto}}</td>
+          <td>{{item.telefono}}</td>
+          <td>{{item.email}}</td>
+          <td>
+            <span 
+            data-bs-toggle="modal" 
+            data-bs-target="#exampleModal" 
+            (click)="ObtenerProveedor(item)" 
+            class="material-symbols-outlined">
+              add
+              </span>
+            </td>
+        </tr>
+      }
+
+    </tbody>
+</table>
