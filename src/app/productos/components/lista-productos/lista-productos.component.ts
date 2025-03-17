@@ -7,6 +7,7 @@ import { Producto } from '../../interfaces/producto';
   templateUrl: './lista-productos.component.html',
   styleUrl: './lista-productos.component.css'
 })
+
 export class ListaProductosComponent {
 
   //Carga todos los productos
