@@ -1,14 +1,15 @@
+<div class="mt-4 text-center ">
+  <h1>{{title}}</h1>
+</div>
+
 <form [formGroup]="clienteForm" (ngSubmit)="guardarCliente()" class="container mt-4 p-4 border rounded shadow bg-light">
-  <div class="mb-3">
+  <div>
     <input id="id" type="hidden" formControlName="id" required class="form-control" />
   </div>
 
-  <div class="mb-5 text-center">
-    <h1>{{title}}</h1>
-  </div>
 
   <div class="mb-4">
-    <label for="nombre" class="form-label">Nombre:</label>
+    <label for="nombre" class="form-label fw-bold">Nombre:</label>
     <input id="nombre" type="text" formControlName="nombre" required class="form-control" />
     <div *ngIf="clienteForm.get('nombre')?.invalid && clienteForm.get('nombre')?.touched" class="text-danger small">
       Nombre es obligatorio y debe tener al menos 3 caracteres.
@@ -16,7 +17,7 @@
   </div>
 
   <div class="mb-4">
-    <label for="apellido" class="form-label">Apellido:</label>
+    <label for="apellido" class="form-label fw-bold">Apellido:</label>
     <input id="apellido" type="text" formControlName="apellido" required class="form-control" />
     <div *ngIf="clienteForm.get('apellido')?.invalid && clienteForm.get('apellido')?.touched" class="text-danger small">
       Apellido es obligatorio y debe tener al menos 3 caracteres.
@@ -24,7 +25,7 @@
   </div>
 
   <div class="mb-4">
-    <label for="telefono" class="form-label">Teléfono:</label>
+    <label for="telefono" class="form-label fw-bold">Teléfono:</label>
     <input id="telefono" type="text" formControlName="telefono" required class="form-control" />
     <div *ngIf="clienteForm.get('telefono')?.invalid && clienteForm.get('telefono')?.touched" class="text-danger small">
       Teléfono es obligatorio y debe contener solo números.
@@ -32,7 +33,7 @@
   </div>
 
   <div class="mb-5">
-    <label for="email" class="form-label">Email:</label>
+    <label for="email" class="form-label fw-bold">Email:</label>
     <input id="email" type="email" formControlName="email" class="form-control" />
     <div *ngIf="clienteForm.get('email')?.invalid && clienteForm.get('email')?.touched" class="text-danger small">
       Ingrese un email válido.

@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.navbar {
+    background-color: #1a202c;
+    color: white;
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: display;
+    justify-content: flex-start;
+}
+.logo{
+    background-image: url(/public/img/logo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50px;
+}
+.titulo{
+    border-bottom: 1px solid rgb(29, 24, 24);
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    
+}
+.nav-links a:hover {
+    color: #a0aec0;
+    border-bottom: 1px solid #a0aec0;
+}
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #2d3748;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+}
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+.mobile-menu a:hover {
+    background-color: #4a5568;
+}
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}

@@ -1,4 +1,10 @@
-.imagen{
-    width: 150px;
-    height: 100px;
+td {
+    vertical-align: middle; /* Alinea el contenido al centro verticalmente */
+    
+}
+
+.imagen {
+    max-height: 80px; 
+    width: auto; 
+    display: block; 
 }
