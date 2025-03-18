@@ -9,7 +9,7 @@ import { Route, Router } from '@angular/router';
   styleUrl: './clientes-list.component.css'
 })
 export class ClientesListComponent {
-
+  
   clientes: ClienteDTO[] = [];
   constructor(private clienteService:ClienteService , private router:Router) { }
 

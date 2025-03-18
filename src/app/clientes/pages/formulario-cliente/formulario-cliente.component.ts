@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FormularioClienteComponent implements OnInit {
   clienteForm!: FormGroup;
-  clienteId!: number | null; // Guarda el ID si se está editando
+  clienteId!: number | null; // Esta variable es para guardar el id en caso de que se esté editando
   title = 'Agregar cliente';
 
   constructor(
@@ -28,11 +28,10 @@ export class FormularioClienteComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       const id = params.get('id');
 
-      if (id) {
-        this.clienteId = parseInt(id);
+      if (id) { 
+        this.clienteId = parseInt(id); 
         this.title = 'Editar cliente';
-        console.log('ID del cliente:', this.clienteId ?? 'No hay ID');
-        this.loadCliente(this.clienteId);
+        this.loadCliente(this.clienteId); //Carga el cliente
       } else {
         this.clienteId = null;  
       }
@@ -42,8 +41,8 @@ export class FormularioClienteComponent implements OnInit {
   // Inicializar el formulario
   initForm(): void {
     this.clienteForm = this.fb.group({
-      nombre: ['', [Validators.required, Validators.minLength(3) , Validators.maxLength(30)]],
-      apellido: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(25)]],
+      nombre: ['', [Validators.required , Validators.maxLength(30)]],
+      apellido: ['', [Validators.required, Validators.maxLength(25)]],
       email: ['', [Validators.required, Validators.email , Validators.maxLength(50)]],
       telefono: ['', [Validators.required, Validators.pattern('^[0-9]{8,15}$')]]
     });
@@ -58,13 +57,14 @@ export class FormularioClienteComponent implements OnInit {
     });
   }
 
-  // Enviar formulario (crear o actualizar cliente)
+  // Enviar formulario
   guardarCliente(): void {
     if (this.clienteForm.invalid) {
       alert('Formulario inválido');
       return;
     }
-    // Crear un objeto FormData
+
+    
     const formData = new FormData();
     formData.append('nombre', this.clienteForm.get('nombre')?.value);
     formData.append('apellido', this.clienteForm.get('apellido')?.value);

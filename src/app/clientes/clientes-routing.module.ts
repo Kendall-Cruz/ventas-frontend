@@ -4,9 +4,18 @@ import { ClientesListComponent } from './pages/clientes-list/clientes-list.compo
 import { FormularioClienteComponent } from './pages/formulario-cliente/formulario-cliente.component';
 
 const routes: Routes = [
-  { path: '', component: ClientesListComponent },
-  { path: 'nuevo', component: FormularioClienteComponent }, // Crear cliente
-  { path: 'editar/:id', component: FormularioClienteComponent }, // Editar cliente
+  { 
+    path: '', 
+    component: ClientesListComponent 
+  },
+  { 
+    path: 'nuevo',
+    component: FormularioClienteComponent
+  },
+  { 
+    path: 'editar/:id', 
+    component: FormularioClienteComponent 
+  } 
 ];
 
 
